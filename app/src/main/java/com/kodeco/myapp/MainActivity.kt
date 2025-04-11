@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -38,25 +39,35 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        //Change font size
-        fontSize = 30.sp,
-        //set color of font
-        color = Color.Blue,
-        modifier = modifier
-            //set padding around text
-            .padding(20.dp)
-            //set background
-            .background(Color(0xFFADD8E6))
-            //make borders
-            .border(3.dp, Color.Black)
-            //change size of text container
-            .size(130.dp)
-            .padding(10.dp)
+    //create a column
+    Column(
+        modifier = Modifier
+            //make column fill the space
+            .fillMaxSize()
+            //mak padding around the column
+            .padding(100.dp)
+    ) {
+        Text(
+            text = "Hello $name!",
+            //Change font size
+            fontSize = 30.sp,
+            //set color of font
+            color = Color.Blue,
+            modifier = modifier
+                //set padding around text
+                .padding(20.dp)
+                //set background
+                .background(Color(0xFFADD8E6))
+                //make borders
+                .border(3.dp, Color.Black)
+                //change size of text container
+                .size(130.dp)
+                .padding(10.dp)
 
 
-    )
+        )
+    }
+
 }
 
 @Preview(showBackground = true)
